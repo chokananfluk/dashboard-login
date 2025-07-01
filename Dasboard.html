@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body { margin: 0; background: #000; }
+    iframe {
+      border: none;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* ป้องกันคลิกขวา/ลาก/เลือกข้อความ */
+    body, iframe {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      pointer-events: auto;
+    }
+  </style>
+  <script>
+    // ป้องกันคลิกขวา + ป้องกัน Inspect
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = function(e) {
+      if (e.key === "F12" || 
+          (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) ||
+          (e.ctrlKey && e.key === 'U')) {
+        return false;
+      }
+    };
+  </script>
+</head>
+<body>
+  <iframe src="https://lookerstudio.google.com/embed/reporting/1a63abe2-eb83-46ea-99cd-e4207dbb5bc8/page/RWdFF" allowfullscreen></iframe>
+</body>
+</html>
