@@ -21,13 +21,23 @@
 </div>
 
 <script>
+  // รายชื่อผู้ใช้งานและรหัสผ่านที่อนุญาต
+  const users = {
+    "admin": "1234",
+    "PEA_BD": "bd2025Dash",
+    "user2": "pass123",
+    "user3": "mypassword",
+    "user4": "secret!",
+    "user5": "test2024"
+  };
+
   function login() {
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
 
-    // เปลี่ยนรหัสตรงนี้ได้ตามที่ต้องการ
-    if (username === "admin" && password === "1234") {
-      window.location.href = "Dasboard.html";
+    if (users[username] && users[username] === password) {
+      // เข้าสู่หน้า dashboard ถ้าถูกต้อง
+      window.location.href = "dashboard.html";
     } else {
       document.getElementById("error").innerText = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
     }
