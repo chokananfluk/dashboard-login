@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login to Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #f2f2f2; text-align: center; padding-top: 100px; }
+    .login-box { background: white; display: inline-block; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input { margin: 10px 0; padding: 10px; width: 200px; }
+    button { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h2>เข้าสู่ระบบเพื่อดู Dashboard</h2>
+  <input type="text" id="username" placeholder="Username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+  function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // เปลี่ยนรหัสตรงนี้ได้ตามที่ต้องการ
+    if (username === "admin" && password === "1234") {
+      window.location.href = "https://lookerstudio.google.com/u/0/reporting/1a63abe2-eb83-46ea-99cd-e4207dbb5bc8/page/RWdFF/edit";
+    } else {
+      document.getElementById("error").innerText = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+    }
+  }
+</script>
+
+</body>
+</html>
+
